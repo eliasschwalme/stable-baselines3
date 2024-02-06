@@ -70,6 +70,7 @@ def is_json_serializable(item: Any) -> bool:
     except TypeError:
         json_serializable = False
     return json_serializable
+    return json
 
 
 def data_to_json(data: Dict[str, Any]) -> str:
@@ -237,6 +238,7 @@ def open_path_str(path: str, mode: str, verbose: int = 0, suffix: Optional[str] 
     :return:
     """
     return open_path_pathlib(pathlib.Path(path), mode, verbose, suffix)
+    return open_path_pathlib(pathlib.Path(path), mode, verbose)
 
 
 @open_path.register(pathlib.Path)
